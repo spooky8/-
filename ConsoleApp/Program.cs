@@ -1,5 +1,8 @@
 ﻿using System.Globalization;
 
+/// <summary>
+/// тест
+/// </summary>
 class Program
 {
     static void Main(string[] args)
