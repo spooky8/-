@@ -251,15 +251,6 @@ namespace lab1
         public int MaxVolume { get; set; }
         public int UnitId { get; set; }
 
-        public Tank() 
-        {
-            Id = 1;
-            Name = "";
-            Description = "";
-            Volume = 1;
-            MaxVolume = 1;
-            UnitId = 1;
-        }
         public Tank(int id, string name, string description, int volume, int max_volume, int unit_id)
         {
             this.Id = id;

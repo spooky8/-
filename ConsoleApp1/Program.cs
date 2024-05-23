@@ -14,21 +14,19 @@ namespace lab2
             var units = ReadJsonFile<Unit[]>("units.json");
             var factories = ReadJsonFile<Factory[]>("factories.json");
 
-            Console.WriteLine(tanks.FirstOrDefault().Name);
+            Console.WriteLine(tanks);
             Console.WriteLine(units);
             Console.WriteLine(factories);
-            Console.WriteLine($"Количество установок: {units.Length}");
-            Console.WriteLine($"Количество заводов: {factories.Length}");
 
         }
 
 
-        public static T ReadJsonFile<T>(string filePath)
+        public static List<T> ReadJsonFile<T>(string filePath)
         {
             using StreamReader reader = new StreamReader(filePath);
             string jsonString = reader.ReadToEnd();
 
-            return JsonSerializer.Deserialize<T>(jsonString);
+            return JsonSerializer.Deserialize<List<T>>(jsonString);
         }
 
         public static int GetTotalVolumeUsingLINQ(Tank[] tanks)
