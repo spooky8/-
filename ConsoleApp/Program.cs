@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Xml.Linq;
 
 namespace lab1
 {
@@ -193,11 +194,17 @@ namespace lab1
     public class Unit
     {
         //..
-        public int Id;
-        public string Name;
-        public string Description;
-        public int FactoryId;
-
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int FactoryId { get; set; }
+        public Unit()
+        {
+            Id = 0;
+            Name = "";
+            Description = "";
+            FactoryId = 0;
+        }
         public Unit(int id, string name, string description, int factory_id)
         {
             this.Id = id;
@@ -213,10 +220,16 @@ namespace lab1
     public class Factory
     {
         //..
-        public int Id;
-        public string Name;
-        public string Description;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
 
+        public Factory()
+        {
+            this.Id = 1;
+            this.Name = "";
+            this.Description = "";
+        }
         public Factory(int id, string name, string description)
         {
             this.Id = id;
@@ -231,13 +244,22 @@ namespace lab1
     public class Tank
     {
         //..
-        public int Id;
-        public string Name;
-        public string Description;
-        public int Volume;
-        public int MaxVolume;
-        public int UnitId;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int Volume { get; set; }
+        public int MaxVolume { get; set; }
+        public int UnitId { get; set; }
 
+        public Tank() 
+        {
+            Id = 1;
+            Name = "";
+            Description = "";
+            Volume = 1;
+            MaxVolume = 1;
+            UnitId = 1;
+        }
         public Tank(int id, string name, string description, int volume, int max_volume, int unit_id)
         {
             this.Id = id;

@@ -14,7 +14,12 @@ namespace lab2
             var units = ReadJsonFile<Unit[]>("units.json");
             var factories = ReadJsonFile<Factory[]>("factories.json");
 
-            // Остальная часть программы...
+            Console.WriteLine(tanks.FirstOrDefault().Name);
+            Console.WriteLine(units);
+            Console.WriteLine(factories);
+            Console.WriteLine($"Количество установок: {units.Length}");
+            Console.WriteLine($"Количество заводов: {factories.Length}");
+
         }
 
 
@@ -22,6 +27,7 @@ namespace lab2
         {
             using StreamReader reader = new StreamReader(filePath);
             string jsonString = reader.ReadToEnd();
+
             return JsonSerializer.Deserialize<T>(jsonString);
         }
 
